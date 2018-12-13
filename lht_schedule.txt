@@ -4,6 +4,7 @@ January 28
 Caron Quartet
 1 pm
 $12
+=
 
 January 29
 Harlem Choir
@@ -111,3 +112,14 @@ March 3
 Othello
 8 pm
 $24/$36/$48 
+
+                <dt>
+                <dt>
+                    <h1>day</h1>
+                    <dl>
+                        <dt>event</dt>
+                        <dd>time</dd>
+                        <dd>price</dd>
+                    </dl>
+                </dt>
+                </dt>
