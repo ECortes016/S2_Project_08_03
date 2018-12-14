@@ -6,14 +6,32 @@
    Case Problem 3
 
    Columns Style Sheet
-   Author: 
-   Date:   
+   Author: Emmanuel Cortes Castaneda
+   Date: 12.13.18  
 
-   Filename:   lht_columns.css
+   Filename: lht_columns.css
 
 */
 
-
-
 /* Column Styles */
+/* The article is given a column width of 260px as well as the inline browser styles for those that don't support it. A column gap with the inline broswer style and the column rule ALSO with the inline browser for the browsers that don't support it. Minimum of 2 lines for widows and orphans and the h1 heading within the article is being extended out by using the column-span property */
 
+article {
+    -moz-column-width: 260px;
+    -webkit-column-width: 260px;
+    column-width: 260px;
+
+    -moz-column-gap: 20px;
+    -webkit-column-gap: 20px;
+    column-gap: 20px;
+
+    -moz-column-rule: 1px solid rgb(154, 64, 31);
+    -webkit-column-rule: 1px solid rgb(154, 64, 31);
+    column-rule: 1px solid rgb(154, 64, 31);
+    widows: 2;
+    orphans: 2;
+}
+
+article h1 {
+    column-span: all;
+}

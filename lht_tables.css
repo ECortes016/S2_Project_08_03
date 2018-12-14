@@ -6,8 +6,8 @@
    Case Problem 3
 
    Calendar Style Sheet
-   Author: 
-   Date:   
+   Author: Emmanuel Cortes Castaneda
+   Date: 12.13.18  
 
    Filename:   lht_tables.css
 
@@ -17,6 +17,7 @@
    Mobile Styles: 0px to 640px 
    ===============================
 */
+/* Being only displayed on mobile devices, the h1 and table head are not being shown at all. All odd table rows are given a background color and a solid grey border. The table data cells with the attribute 'data-date' are set to an absolute position with the content being set to the top left with 5px of padding on each side. */
 
 @media only screen and (max-width:640px) {
 
@@ -25,7 +26,7 @@
     tr,
     td,
     th,
-    caption {
+    table caption {
         display: block;
     }
 
@@ -54,7 +55,7 @@
         border: solid grey 2px;
     }
 
-    td:before {
+    td::before {
         content: attr(data-date);
         position: absolute;
         top: 0px;
@@ -68,7 +69,51 @@
    Tablet and Desktop Styles: greater than 640px
    =============================================
 */
+/* The table is given a background image with no repeat while being set to bottom right of the table. The table is given a double border with border collapse. The table header and table data cells are given a solid grey border with word wrap which lets words be broken apart. All table data cell with the attribute 'data-date' which have the value of 'Feb' somewhere in the value, are given their own background color and box shadow. */
 
 @media only screen and (min-width: 641px) {
-    table {}
+    table {
+        background-image: url(lht_photo1.png);
+        background-repeat: no-repeat;
+        background-position: right bottom;
+        background-size: 40%;
+        border: 6px double rgb(154, 64, 3);
+        border-collapse: collapse;
+        margin: 20px auto;
+        table-layout: fixed;
+        width: 85%;
+    }
+
+    th, td {
+        border: 1px solid grey;
+        font-size: .85em;
+        font-weight: normal;
+        padding: 5px;
+        vertical-align: top;
+        width: 14.28%;
+        word-wrap: break-word
+    }
+
+    td {
+        background-color: rgba(171, 171, 171, .6);
+        color: rgb(11, 12, 145);
+    }
+
+    td[data-date*="Feb"] {
+        background-color: rgba(232, 214, 148, .6);
+        box-shadow: grey inset 0px 0px 20px;
+    }
+
+    table caption {
+        caption-side: top;
+        text-align: center;
+        padding-bottom: 10px;
+        font-size: 1.2em;
+        letter-spacing: 3px;
+    }
+
+    thead tr th {
+        background-color: rgb(154, 63, 3);
+        color: white;
+    }
 }
